@@ -1,4 +1,5 @@
-# Overview 
+# Overview
+
 > Tic-Tac-Toe Game Refactoring
 
 **NOTE:** You may be asked by your lecturer to submit this assessment via GitHub classrooms. Please check closer to submission date.
@@ -12,7 +13,7 @@ Refactor a given monolithic tic-tac-toe game, such that the code:
 3. Includes at least one test case.
 4. Employs a 2D data structure.
 
-In the process, you must use at least four functions, two classes, two files, and one import statement of your modules (not including imports used in the test case).
+In the process, you must use **at least four functions, two classes, two files, and one import statement of your modules (does not include imports used in the test case or the unittest class)**.
 
 ## Instructions
 
@@ -44,15 +45,16 @@ tic_tac_toe/
 |--- setup.py
 ```
 
-**Note**: 
+**Note**:
 
 - `__init__.py` files are used to indicate that a directory should be treated as a Python package. This allows the files within to be imported as a module in the test scripts or other python files.
 - `setup.py` is a Python file used to specify what modules and dependencies must be installed. I will provide this file, along with instructions on how to install your modules using this file.
-- You must give your Python files appropriate names. Do **not** use module1, 2, etc.
-  
+- You must give your Python files appropriate names. **Do not use module1, 2, etc.**
+- make sure to complete the **project metadata** section in setup.py
+
 ### Step 5: Create a Test Case
 
-Develop at least one test case for your refactored code. The test case should reside in the 'tests' directory. 
+Develop at least one test case for your refactored code. The test case should reside in the 'tests' directory. This test should test game play and not set up i.e. does not just check for existence of a blank board but check for a diagonal win.
 
 ### Step 6: Implement 2D Data Structure
 
@@ -65,6 +67,7 @@ Once you have completed your refactoring, write a brief report addressing the fo
 1. Justification for your refactoring decisions.
 2. The challenges you would have faced maintaining and testing the original monolithic code.
 3. How you would modify your refactored code to handle a custom-sized tic-tac-toe game (larger than 3x3), and how this implementation would be easier to handle than in the original code.
+4. Make sure to add this report to your submission
 
 ### Step 8: Short Answer (Knowledge Questions)
 
@@ -75,15 +78,15 @@ Provide brief answers to the knowledge-question worksheet.
 3. How would you explain Python's parameter-passing mechanism? Is it more similar to pass-by-value or pass-by-reference? Justify your answer.
 4. Given the following Python code, what will be the output and why?
 
-    ```python
-    def modify_list(list_):
-        list_.append("new")
-        list_ = ["completely", "new"]
+   ```python
+   def modify_list(list_):
+       list_.append("new")
+       list_ = ["completely", "new"]
 
-    items = ["original"]
-    modify_list(items)
-    print(items)
-    ```
+   items = ["original"]
+   modify_list(items)
+   print(items)
+   ```
 
 5. In Python even though variables created within a function are local, there are still situations where you can modify data outside the scope with a local variable. Explain this anomaly and relate it to both mutability and pass by reference.
 6. List two benefits of modular coding approaches. How do these benefits assist in the development of medium-sized applications?
@@ -94,4 +97,6 @@ Please submit the refactored code, your test case, and the written report.
 
 ### Evaluation Criteria
 
-Your refactoring will be evaluated on the clarity and modularity of your code, as well as the thoughtful reasoning behind your design decisions. Your test case should be robust and cover key aspects of the tic-tac-toe game functionality. The written report should accurately reflect your understanding of code refactoring, testing, and the flexibility of your new implementation.
+- Your refactoring will be evaluated on the clarity and modularity of your code, as well as the thoughtful reasoning behind your design decisions.
+- Your test case should be robust and cover key aspects of the tic-tac-toe game functionality.
+- The written report should accurately reflect your understanding of code refactoring, testing, and the flexibility of your new implementation.
