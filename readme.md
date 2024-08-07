@@ -19,7 +19,9 @@ In the process, you must use **at least four functions, two classes, two files, 
 
 ### Step 1: Review the Existing Code
 
-Firstly, analyze the given tic-tac-toe game code. Understand the flow and functionality before proceeding with the refactoring.
+~~Firstly, analyze the given tic-tac-toe game code. Understand the flow and functionality before proceeding with the refactoring.~~
+
+Martina: After looking over the code, I can see several areas for improvement. The code is working, but it needs to be structured and organised properly.
 
 ### Step 2: Identify Components to Refactor
 
