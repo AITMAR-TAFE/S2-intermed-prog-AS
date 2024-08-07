@@ -7,7 +7,7 @@ empty = " "
 board = [empty] * 9
 
 # Game loop
-while True:
+while True:   # I want this to be in a Board class and in a proper 2D list.
     # Print board
     print(board[0], "|", board[1], "|", board[2])
     print("---------")
@@ -16,7 +16,7 @@ while True:
     print(board[6], "|", board[7], "|", board[8])
     print()
 
-    # Check for win
+    # Check for win      # I want this to be in a Game logic class
     win_conditions = [(0,1,2), (3,4,5), (6,7,8), (0,3,6), (1,4,7), (2,5,8), (0,4,8), (2,4,6)]
     for wc in win_conditions:
         if board[wc[0]] == board[wc[1]] == board[wc[2]] != empty:

@@ -25,7 +25,9 @@ Martina: After looking over the code, I can see several areas for improvement. T
 
 ### Step 2: Identify Components to Refactor
 
-Identify the parts of the code that can be improved. Determine which parts of the code can be grouped logically into separate modules.
+~~Identify the parts of the code that can be improved. Determine which parts of the code can be grouped logically into separate modules.~~
+
+Martina: The code that prints the board could be in a separate class and stored in 2D list. Game logic that updates board after player moves could also be separated. Winning and ties could be a methods of game logic. User input code could also be moved to separate method.
 
 ### Step 3: Modularizing the Code
 
