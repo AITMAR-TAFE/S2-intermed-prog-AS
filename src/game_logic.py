@@ -3,6 +3,8 @@ class Game_logic:
     def __init__(self,):
         self.player1 = "X"
         self.player2 = "O"
+        self.move_count = 0
+        self.board = Board()
 
     def check_for_win(self,current_board):
         players_list = current_board
@@ -35,6 +37,7 @@ class Game_logic:
         print("It's a tie!")
         return True
 
+    # this method will ask user to enter their move
     def get_user_input(self):
         print('Please write your next move here as ROW NUMBER(0-2) COMMA COLUMN NUMBER(0-2), example: 1,2')
         while True:
@@ -45,15 +48,17 @@ class Game_logic:
                     return int(row), int(col)
             print("Invalid input, try again.")
 
-
-    def next_move(self,current_board):
-        p1 = "X"
-        p2 = "O"
+    # this will determine who's turn it is
+    def next_move(self):
         while True:
-            player = p1 if current_board.count(" ") % 2 == 1 else p2
-            move = input("Next move for player " + player + " (0-8): ")
-            if move.isdigit() and 0 <= int(move) <= 8 and current_board[int(move)] == " ":
-                current_board[int(move)] = player
+            player = self.player1 if self.move_count % 2 == 0 else self.player2
+            # call the user input method
+            row, col = self.get_user_input()
+            if self.board[row][col] == " ":
+                self.board[row][col] = player
+                self.move_count += 1     # the purpose of this is to count the moves
+                print("Current board: ")
+                print(self.board)
                 break
             else:
-                print("Invalid move, try again.")
+                print("This move is already taken, try again.")
