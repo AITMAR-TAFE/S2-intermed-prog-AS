@@ -35,6 +35,17 @@ class Game_logic:
         print("It's a tie!")
         return True
 
+    def get_user_input(self):
+        print('Please write your next move here as ROW NUMBER(0-2) COMMA COLUMN NUMBER(0-2), example: 1,2')
+        while True:
+            user_input = input('Your next move is: ')
+            if user_input.count(",") == 1:
+                row, col = user_input.split(",")
+                if row.isdigit() and 0 <= int(row) <= 2 and col.isdigit() and 0 <= int(col) <= 2:
+                    return int(row), int(col)
+            print("Invalid input, try again.")
+
+
     def next_move(self,current_board):
         p1 = "X"
         p2 = "O"
