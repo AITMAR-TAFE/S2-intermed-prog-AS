@@ -69,8 +69,17 @@ Refactor the code such that it employs a 2D data structure for the tic-tac-toe g
 Once you have completed your refactoring, write a brief report addressing the following:
 
 1. Justification for your refactoring decisions.
+
+Martina:Refactoring is important because we need to ensure that it's easy to read, maintainable, and can be tested properly. Each class has it's own responsibility - Board is used for creating and displaing the game board while Game_logic is used to store methods for checking wins and user interactions(inputs).
+
 2. The challenges you would have faced maintaining and testing the original monolithic code.
+
+Martina: Wih the original code, it would have been hard to change some methods or logic, as that would often lead to excessive change in code in overall. It would also be difficult to test and isolate code. 
+
 3. How you would modify your refactored code to handle a custom-sized tic-tac-toe game (larger than 3x3), and how this implementation would be easier to handle than in the original code.
+
+Martina: I would improve creating the board in Board class to accept a row, col size. Additionally I would have to change check_for_win method to accept different board sizes to check for wins. Than would accomodate different sizes of boards, making it easier to adjust by the need.
+
 4. Make sure to add this report to your submission
 
 ### Step 8: Short Answer (Knowledge Questions)
@@ -78,9 +87,20 @@ Once you have completed your refactoring, write a brief report addressing the fo
 Provide brief answers to the knowledge-question worksheet.
 
 1. Briefly explain: what is modular programming
+
+Martina : Is a way of coding that separates program into modules, that are specific to their own and have distinct functionality. 
+
 2. How can you import only a specific function or class from a module in Python? What is the syntax for this?
+
+Martina : To import a specific function, I would use from board import Board and then use Board() ...
+
 3. How would you explain Python's parameter-passing mechanism? Is it more similar to pass-by-value or pass-by-reference? Justify your answer.
+
+Martina : When You pass a variable to a function in Python, you are passing a reference to the object that the variable refers to, not the actual object itself. This means that the function receives a reference to the same object, so if the function modifies the object, the changes are reflected outside the function.
+
 4. Given the following Python code, what will be the output and why?
+
+Martina : When we call the method modify_list, it will modify items list by appendin the string "new" to it. Because it referes to same object it now becomes ["original","new"]. The new list inside the method does not affect original list as it changes local reference to a new list object but original stays the same. 
 
    ```python
    def modify_list(list_):
@@ -93,7 +113,12 @@ Provide brief answers to the knowledge-question worksheet.
    ```
 
 5. In Python even though variables created within a function are local, there are still situations where you can modify data outside the scope with a local variable. Explain this anomaly and relate it to both mutability and pass by reference.
+
+Martina : Because when mutable objects(lists and dictionatries) are modified with functions, the chanes are made outside the functions because of pass by object reference system in Python. Even when variables are local, they still refer to the same mutable object, and this means that modifications that are done inside function will last after the function ends.
+
 6. List two benefits of modular coding approaches. How do these benefits assist in the development of medium-sized applications?
+Martina : Improved Code Readability and Maintenance, Better Reusability and Testing.
+This will hel developers to quickly understand, find and change needed parts of the code without going through coplicated and unorganised code, waisting time.It also supports easier debugging and small improvements.
 
 ### Submission
 
