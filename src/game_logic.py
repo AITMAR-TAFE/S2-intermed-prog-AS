@@ -1,37 +1,32 @@
 from board import Board
-class Game_logic:
-    def __init__(self,):
+class Game_logic():
+    def __init__(self):
+        self.board = Board()
         self.player1 = "X"
         self.player2 = "O"
         self.move_count = 0
-        self.board = Board()
 
-    def check_for_win(self,current_board):
-        players_list = current_board
+    def check_for_win(self):
+        players_list = self.board.board
         winner = None
-        # Check rows
-        if players_list[0][0] == players_list[0][1] == players_list[0][2] != " ":
-            winner = players_list[0][0]
-        if players_list[1][0] == players_list[1][1] == players_list[1][2] != " ":
-            winner = players_list[1][0]
-        if players_list[2][0] == players_list[2][1] == players_list[2][2] != " ":
-            winner = players_list[2][0]
-        # Check columns
-        if players_list[0][0] == players_list[1][0] == players_list[2][0] != " ":
-            winner = players_list[0][0]
-        if players_list[0][1] == players_list[1][1] == players_list[2][1] != " ":
-            winner = players_list[0][1]
-        if players_list[0][2] == players_list[1][2] == players_list[2][2] != " ":
-            winner = players_list[0][2]
+        # Check rows and columns
+        for i in range(3):
+            if players_list[i][0] == players_list[i][1] == players_list[i][2] != " ":
+                winner = players_list[i][0]
+            if players_list[0][i] == players_list[1][i] == players_list[2][i] != " ":
+                winner = players_list[0][i]
+
         # Check diagonals
         if players_list[0][0] == players_list[1][1] == players_list[2][2] != " ":
             winner = players_list[0][0]
         if players_list[0][2] == players_list[1][1] == players_list[2][0] != " ":
             winner = players_list[0][2]
-        print("Today's winner is ", winner)
 
-    def check_for_tie(self, current_board):
-        for row in current_board:
+        if winner:
+            print("Today's winner is ", winner)
+
+    def check_for_tie(self):
+        for row in self.board.board:
             if ' ' in row:
                 return False
         print("It's a tie!")
@@ -54,11 +49,15 @@ class Game_logic:
             player = self.player1 if self.move_count % 2 == 0 else self.player2
             # call the user input method
             row, col = self.get_user_input()
-            if self.board[row][col] == " ":
-                self.board[row][col] = player
+
+            if self.board.board[row][col] == " ":
+                self.board.board[row][col] = player
                 self.move_count += 1     # the purpose of this is to count the moves
                 print("Current board: ")
-                print(self.board)
-                break
+                self.board.display_board()
+                if self.check_for_win():
+                    break
+                if self.check_for_tie():
+                    break
             else:
                 print("This move is already taken, try again.")
