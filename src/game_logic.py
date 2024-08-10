@@ -1,12 +1,14 @@
 from board import Board
 class Game_logic():
     def __init__(self):
+        # Initializing the game with a new board and default player symbols
         self.board = Board()
         self.player1 = "X"
         self.player2 = "O"
         self.move_count = 0
 
     def check_for_win(self):
+        # Check if there is a winner.
         players_list = self.board.board
         winner = None
         # Check rows and columns
@@ -26,14 +28,15 @@ class Game_logic():
             print("Today's winner is ", winner)
 
     def check_for_tie(self):
+        # Checks is there is any empty space on board for playing
         for row in self.board.board:
             if ' ' in row:
                 return False
         print("It's a tie!")
         return True
 
-    # this method will ask user to enter their move
     def get_user_input(self):
+        # Ask user for next move
         print('Please write your next move here as ROW NUMBER(0-2) COMMA COLUMN NUMBER(0-2), example: 1,2')
         while True:
             user_input = input('Your next move is: ')
@@ -43,8 +46,8 @@ class Game_logic():
                     return int(row), int(col)
             print("Invalid input, try again.")
 
-    # this will determine who's turn it is
     def next_move(self):
+        # This method will tell who's turn it is
         while True:
             player = self.player1 if self.move_count % 2 == 0 else self.player2
             # call the user input method
