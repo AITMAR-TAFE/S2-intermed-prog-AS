@@ -26,6 +26,8 @@ class Game_logic():
 
         if winner:
             print("Today's winner is ", winner)
+            return True
+        return False
 
     def check_for_tie(self):
         # Checks is there is any empty space on board for playing
