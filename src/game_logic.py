@@ -39,9 +39,8 @@ class Game_logic():
 
     def get_user_input(self):
         # Ask user for next move
-        print('Please write your next move here as ROW NUMBER(0-2) COMMA COLUMN NUMBER(0-2), example: 1,2')
         while True:
-            user_input = input('Your next move is: ')
+            user_input = input('Write you next move here: ')
             if user_input.count(",") == 1:
                 row, col = user_input.split(",")
                 if row.isdigit() and 0 <= int(row) <= 2 and col.isdigit() and 0 <= int(col) <= 2:
@@ -53,12 +52,12 @@ class Game_logic():
         while True:
             player = self.player1 if self.move_count % 2 == 0 else self.player2
             # call the user input method
+            print("Current player is: ", player)
             row, col = self.get_user_input()
 
             if self.board.board[row][col] == " ":
                 self.board.board[row][col] = player
                 self.move_count += 1     # the purpose of this is to count the moves
-                print("Current board: ")
                 self.board.display_board()
                 if self.check_for_win():
                     break
