@@ -74,7 +74,7 @@ Martina:Refactoring is important because we need to ensure that it's easy to rea
 
 2. The challenges you would have faced maintaining and testing the original monolithic code.
 
-Martina: Wih the original code, it would have been hard to change some methods or logic, as that would often lead to excessive change in code in overall. It would also be difficult to test and isolate code. 
+Martina: With the original code, it would have been hard to change some methods or logic, as that would often lead to excessive change in code in overall. It would also be difficult to test and isolate code. 
 
 3. How you would modify your refactored code to handle a custom-sized tic-tac-toe game (larger than 3x3), and how this implementation would be easier to handle than in the original code.
 
@@ -88,15 +88,15 @@ Provide brief answers to the knowledge-question worksheet.
 
 1. Briefly explain: what is modular programming
 
-Martina : Is a way of coding that separates program into modules, that are specific to their own and have distinct functionality. 
+Martina : Is a way of coding that separates program into more manageable modules. All modules are encapsulate specific features to their own and have different functionalities.
 
 2. How can you import only a specific function or class from a module in Python? What is the syntax for this?
 
-Martina : To import a specific function, I would use from board import Board and then use Board() ...
+Martina : To import a class, I would use from board import Board, and then I will create an instance of the board class Board(). For importing function I would use from board import display_board and then call the function display_board()
 
 3. How would you explain Python's parameter-passing mechanism? Is it more similar to pass-by-value or pass-by-reference? Justify your answer.
 
-Martina : When You pass a variable to a function in Python, you are passing a reference to the object that the variable refers to, not the actual object itself. This means that the function receives a reference to the same object, so if the function modifies the object, the changes are reflected outside the function.
+Martina : When you pass a variable to a function in Python, you are passing a reference to the object that the variable refers to, not the actual object itself. This means that the function receives a reference to the same object, so if the function modifies the object (for example, a list or dictionary), the changes will be reflected outside the function. However, if the object is immutable (such as an integer or string), any modifications will result in the creation of a new object, leaving the original object unchanged.
 
 4. Given the following Python code, what will be the output and why?
 
@@ -118,7 +118,9 @@ Martina : Because when mutable objects(lists and dictionaries) are modified with
 
 6. List two benefits of modular coding approaches. How do these benefits assist in the development of medium-sized applications?
 Martina : Improved Code Readability and Maintenance, Better Re-usability and Testing.
-This will hel developers to quickly understand, find and change needed parts of the code without going through complicated and unorganised code, waisting time.It also supports easier debugging and small improvements.
+This will help developers to quickly understand, find and change needed parts of the code without going through a large, complicated and unorganised code, therefore saving time. 
+This process will speed up development, because debugging is easier, you can test each isolated module before implementing and also reduces code duplication. 
+
 
 ### Submission
 
